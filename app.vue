@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-[-1] bg-[#F2F2F2] w-full h-[100vh]">
+  <div class="mt-[8rem] pt-4 z-[-1] bg-[#F2F2F2] w-full h-[100vh]">
     <NuxtPage />
 
     <MenuOverlay
