@@ -7,7 +7,7 @@ export default defineEventHandler(async (body) => {
     userId,
     name,
     address,
-    zipCode,
+    zipcode,
     city,
     country,
   } = await readBody(body);
@@ -17,10 +17,10 @@ export default defineEventHandler(async (body) => {
       userId,
       name,
       address,
-      zipCode,
+      zipcode,
       city,
       country,
-     },
+     }
   });
 
   return orderAddress;

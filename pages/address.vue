@@ -26,9 +26,9 @@
                     <TextInput 
                         class="w-full mt-2"
                         placeholder="Zip Code"
-                        v-model:input="zipCode"
+                        v-model:input="zipcode"
                         inputType="text"
-                        :error="error && error.type == 'zipCode' ? error.message : ''"
+                        :error="error && error.type == 'zipcode' ? error.message : ''"
                     />
 
                     <TextInput 
@@ -85,7 +85,7 @@ const user = useSupabaseUser()
 
 let contactName = ref(null)
 let address = ref(null)
-let zipCode = ref(null)
+let zipcode = ref(null)
 let city = ref(null)
 let country = ref(null)
 
@@ -100,7 +100,7 @@ watchEffect(async () => {
     if(currentAddress.value?.data) {
         contactName = currentAddress.value.data.contactName;
         address = currentAddress.value.data.address;
-        zipCode = currentAddress.value.data.zipCode;
+        zipcode = currentAddress.value.data.zipcode;
         city = currentAddress.value.data.city;
         country = currentAddress.value.data.country;
 
@@ -124,9 +124,9 @@ const submit = async () => {
             type: 'address',
             message: 'An address is required'
         }
-    } else if (!zipCode.value) {
+    } else if (!zipcode.value) {
         error.value = {
-            type: 'zipCode',
+            type: 'zipcode',
             message: 'A zip code is required'
         }
     } else if (!city.value) {
@@ -155,7 +155,7 @@ const submit = async () => {
                     userId: user.value.id,
                     name: contactName.value,
                     address: address.value,
-                    zipCode: zipCode.value,
+                    zipcode: zipcode.value,
                     city: city.value,
                     country: country.value,
                 }
@@ -175,7 +175,7 @@ const submit = async () => {
                 userId: user.value.id,
                 name: contactName.value,
                 address: address.value,
-                zipCode: zipCode.value,
+                zipcode: zipcode.value,
                 city: city.value,
                 country: country.value,
             }
